@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar &amp; Card Grid | Flexbox</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a class="navbar__brand" href="#top">
+        Mannat Agarwala
+      </a>
+
+      <!-- CSS-only mobile menu: a hidden checkbox toggled by a label -->
+      <input type="checkbox" id="nav-toggle" class="navbar__toggle visually-hidden">
+      <label for="nav-toggle" class="navbar__burger" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="navbar__menu" aria-label="Primary">
+        <ul class="navbar__links">
+          <li><a href="#top" aria-current="page">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="btn" href="#contact">Hire me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="intro container">
+      <h1>Flexbox navbar &amp; card grid</h1>
+      <p>Resize the window: the cards re-flow without a single media query, and the navbar collapses into a menu below 48em.</p>
+    </section>
+
+    <section id="projects" class="container">
+      <h2>Projects</h2>
+      <div class="cards">
+
+        <article class="card">
+          <div class="card__media" style="--hue:220"></div>
+          <div class="card__body">
+            <h3>Weather Dashboard</h3>
+            <p>Five-day forecast with a clean, responsive layout and unit toggle.</p>
+          </div>
+          <footer class="card__footer">
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JS</li></ul>
+            <a class="btn btn--sm" href="#projects">View</a>
+          </footer>
+        </article>
+
+        <article class="card">
+          <div class="card__media" style="--hue:20"></div>
+          <div class="card__body">
+            <h3>Recipe Finder</h3>
+            <p>Search recipes by ingredient.</p>
+          </div>
+          <footer class="card__footer">
+            <ul class="tags"><li>HTML</li><li>Grid</li></ul>
+            <a class="btn btn--sm" href="#projects">View</a>
+          </footer>
+        </article>
+
+        <article class="card">
+          <div class="card__media" style="--hue:150"></div>
+          <div class="card__body">
+            <h3>Study Planner</h3>
+            <p>Weekly planner that remembers your tasks between visits, using the browser's local storage, and works offline.</p>
+          </div>
+          <footer class="card__footer">
+            <ul class="tags"><li>Flexbox</li><li>JS</li></ul>
+            <a class="btn btn--sm" href="#projects">View</a>
+          </footer>
+        </article>
+
+        <article class="card">
+          <div class="card__media" style="--hue:280"></div>
+          <div class="card__body">
+            <h3>Budget Tracker</h3>
+            <p>Track spending by category.</p>
+          </div>
+          <footer class="card__footer">
+            <ul class="tags"><li>HTML</li><li>CSS</li></ul>
+            <a class="btn btn--sm" href="#projects">View</a>
+          </footer>
+        </article>
+
+        <article class="card">
+          <div class="card__media" style="--hue:340"></div>
+          <div class="card__body">
+            <h3>Photo Gallery</h3>
+            <p>A lightweight responsive gallery with keyboard navigation.</p>
+          </div>
+          <footer class="card__footer">
+            <ul class="tags"><li>HTML</li><li>CSS</li></ul>
+            <a class="btn btn--sm" href="#projects">View</a>
+          </footer>
+        </article>
+
+        <article class="card">
+          <div class="card__media" style="--hue:180"></div>
+          <div class="card__body">
+            <h3>Quiz App</h3>
+            <p>Multiple-choice quiz with instant feedback and a score summary.</p>
+          </div>
+          <footer class="card__footer">
+            <ul class="tags"><li>JS</li><li>Flexbox</li></ul>
+            <a class="btn btn--sm" href="#projects">View</a>
+          </footer>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="about" class="container note">
+      <h2>How it works</h2>
+      <p><code>.cards { display: flex; flex-wrap: wrap; gap }</code> and <code>.card { flex: 1 1 18rem }</code> mean: <em>start at 18rem, grow to share leftover space, shrink if needed, wrap when there is no room</em>. The card footer uses <code>margin-top: auto</code> so every "View" button sits at the bottom, even when text lengths differ.</p>
+    </section>
+
+    <section id="contact" class="container note">
+      <h2>Contact</h2>
+      <p><a href="mailto:mannatno25@gmail.com">mannatno25@gmail.com</a></p>
+    </section>
+  </main>
+</body>
+</html>

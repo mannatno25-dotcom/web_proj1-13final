@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky Navbar &amp; Card Overlay | CSS Positioning</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- position: sticky - stays at the top once you scroll past it -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a class="navbar__brand" href="#top">Mannat Agarwala</a>
+      <nav aria-label="Primary">
+        <ul class="navbar__links">
+          <li><a href="#top">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#cheatsheet">Positioning</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <h6>CSS positioning</h6>
+        <h1>Sticky navbar &amp; card overlay</h1>
+        <p>Scroll down: the navbar stays pinned. Hover (or tab to) a card: an absolutely positioned overlay slides in.</p>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="cards">
+
+          <article class="card">
+            <!-- .card is position: relative, so absolute children are placed inside it -->
+            <div class="card__media" style="--hue:220"></div>
+            <span class="card__badge">New</span>
+            <div class="card__body">
+              <h3>Weather Dashboard</h3>
+              <p>Five-day forecast with a clean, responsive layout.</p>
+            </div>
+            <div class="card__overlay">
+              <p>HTML &middot; CSS &middot; JS</p>
+              <a class="btn" href="#projects">View project</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media" style="--hue:20"></div>
+            <div class="card__body">
+              <h3>Recipe Finder</h3>
+              <p>Search recipes by ingredient with keyboard support.</p>
+            </div>
+            <div class="card__overlay">
+              <p>HTML &middot; CSS Grid</p>
+              <a class="btn" href="#projects">View project</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media" style="--hue:150"></div>
+            <span class="card__badge card__badge--alt">Popular</span>
+            <div class="card__body">
+              <h3>Study Planner</h3>
+              <p>Weekly planner that remembers your tasks.</p>
+            </div>
+            <div class="card__overlay">
+              <p>HTML &middot; Flexbox &middot; JS</p>
+              <a class="btn" href="#projects">View project</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="cheatsheet" class="section section--alt">
+      <div class="container">
+        <h2>Positioning cheat-sheet</h2>
+        <table class="table">
+          <thead>
+            <tr><th scope="col">Value</th><th scope="col">Stays in flow?</th><th scope="col">Offsets relative to</th><th scope="col">Used here for</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>static</code></td><td>Yes</td><td>(offsets ignored)</td><td>Default for everything</td></tr>
+            <tr><td><code>relative</code></td><td>Yes</td><td>Its own normal position</td><td>Anchor for absolute children (<code>.card</code>)</td></tr>
+            <tr><td><code>absolute</code></td><td>No</td><td>Nearest positioned ancestor</td><td>Card badge &amp; overlay</td></tr>
+            <tr><td><code>fixed</code></td><td>No</td><td>The viewport</td><td>Back-to-top button</td></tr>
+            <tr><td><code>sticky</code></td><td>Yes (until stuck)</td><td>Nearest scrolling ancestor</td><td>Navbar</td></tr>
+          </tbody>
+        </table>
+        <p>Extra content so the page is tall enough to scroll and prove the navbar sticks.</p>
+        <p>Positioned elements can be stacked with <code>z-index</code>. The navbar uses <code>--z-nav</code> (100), the overlay uses <code>--z-overlay</code> (10), so the navbar always stays on top.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Reach me at <a href="mailto:you@example.com">you@example.com</a>.</p>
+        <div class="spacer"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- position: fixed - always in the bottom-right of the viewport -->
+  <a class="to-top" href="#top" aria-label="Back to top">&uarr;</a>
+</body>
+</html>

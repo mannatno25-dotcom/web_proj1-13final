@@ -1,0 +1,150 @@
+/* ==========================================================================
+   P9 - Responsive navbar and card grid using Flexbox
+   Mobile-first: base styles are the phone layout; media queries add desktop.
+   ========================================================================== */
+
+/* ---- Navbar (mobile first) --------------------------------------------- */
+.navbar {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  position: sticky; top: 0; z-index: var(--z-nav);
+}
+.navbar__inner {
+  display: flex;
+  flex-wrap: wrap;                      /* menu drops to its own row on mobile */
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--nav-height);
+}
+.navbar__brand {
+  font-weight: var(--weight-bold);
+  font-size: var(--step-1);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/* Hamburger icon (three bars) */
+.navbar__burger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--space-3);
+  cursor: pointer;
+}
+.navbar__burger span {
+  width: 1.5rem; height: 2px;
+  background: var(--color-text);
+  transition: transform 0.2s, opacity 0.2s;
+}
+.navbar__toggle:focus-visible + .navbar__burger { outline: 3px solid var(--color-accent); }
+.navbar__toggle:checked + .navbar__burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar__toggle:checked + .navbar__burger span:nth-child(2) { opacity: 0; }
+.navbar__toggle:checked + .navbar__burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Menu: hidden on mobile until the checkbox is ticked */
+.navbar__menu {
+  display: none;
+  flex-basis: 100%;                     /* take the full row */
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-3);
+  padding-bottom: var(--space-4);
+}
+.navbar__toggle:checked ~ .navbar__menu { display: flex; }
+
+.navbar__links {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.navbar__links a {
+  display: block;
+  padding: var(--space-3) 0;
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
+}
+.navbar__links a[aria-current="page"] { color: var(--color-primary); font-weight: var(--weight-bold); }
+
+/* Desktop: one row, links pushed beside the button */
+@media (min-width: 48em) {
+  .navbar__burger { display: none; }
+  .navbar__menu {
+    display: flex;
+    flex: 1;                            /* fill the space after the brand */
+    flex-basis: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-6);
+    padding-bottom: 0;
+  }
+  .navbar__links { flex-direction: row; gap: var(--space-5); }
+  .navbar__links a { border-bottom: 2px solid transparent; padding: var(--space-2) 0; }
+  .navbar__links a:hover { border-color: var(--color-accent); }
+}
+
+/* ---- Buttons ------------------------------------------------------------ */
+.btn {
+  display: inline-block;
+  padding: var(--space-2) var(--space-5);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  text-decoration: none;
+  text-align: center;
+  font-weight: var(--weight-medium);
+  border-radius: var(--radius-md);
+}
+.btn:hover { background: var(--color-primary-dark); color: var(--color-on-primary); }
+.btn--sm { padding: var(--space-1) var(--space-4); font-size: var(--step--1); }
+
+/* ---- Page ----------------------------------------------------------------*/
+.intro { padding-block: var(--space-7) var(--space-5); }
+.intro h1 { font-size: var(--step-4); }
+section[id] { scroll-margin-top: var(--nav-height); }
+.note { padding-block: var(--space-6); }
+
+/* ---- Card grid with Flexbox -------------------------------------------- */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+.card {
+  flex: 1 1 18rem;                      /* grow | shrink | basis */
+  max-width: 32rem;                     /* stop a lone last card stretching across the page */
+  display: flex;                        /* the card is itself a flex column */
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.card__media {
+  height: 8rem;
+  background: linear-gradient(135deg, hsl(var(--hue) 70% 45%), hsl(calc(var(--hue) + 40) 75% 62%));
+}
+.card__body { padding: var(--space-5) var(--space-5) var(--space-3); }
+.card__body h3 { font-size: var(--step-1); margin-bottom: var(--space-2); }
+.card__body p { margin: 0; color: var(--color-text-muted); }
+.card__footer {
+  margin-top: auto;                     /* pushes the footer to the card bottom */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5) var(--space-5);
+}
+.tags { display: flex; flex-wrap: wrap; gap: var(--space-2); list-style: none; margin: 0; padding: 0; }
+.tags li {
+  padding: 0 var(--space-3);
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+  border-radius: var(--radius-pill);
+  font-size: var(--step--1);
+}

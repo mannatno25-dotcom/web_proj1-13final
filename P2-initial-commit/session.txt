@@ -1,0 +1,62 @@
+
+# Create the repo and tell Git who I am (local to this repo)
+$ git init -b main
+Initialized empty Git repository in <lab>/portfolio/.git/
+$ git config user.name "Your Name"
+$ git config user.email "you@example.com"
+
+# See what Git sees BEFORE staging
+$ ls -a
+.
+..
+.git
+.gitignore
+index.html
+style.css
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+	index.html
+	style.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+# Stage everything, then check status again
+$ git add .
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitignore
+	new file:   index.html
+	new file:   style.css
+
+
+# Make the first commit
+$ git commit -m "Initial commit: add project skeleton"
+[main (root-commit) fd4bb94] Initial commit: add project skeleton
+ 3 files changed, 32 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 index.html
+ create mode 100644 style.css
+$ git log --oneline
+fd4bb94 Initial commit: add project skeleton
+$ git show --stat HEAD
+commit fd4bb94929a5913391eff5b9b74662a0a91ee1a9
+Author: Your Name <you@example.com>
+Date:   Wed Nov 18 04:31:05 2026 +0000
+
+    Initial commit: add project skeleton
+
+ .gitignore |  4 ++++
+ index.html | 20 ++++++++++++++++++++
+ style.css  |  8 ++++++++
+ 3 files changed, 32 insertions(+)

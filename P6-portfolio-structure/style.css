@@ -1,0 +1,50 @@
+/* P6 - minimal presentation so the semantic structure is easy to see.
+   The full design system arrives in P7. */
+* { box-sizing: border-box; }
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #1b1f24;
+  margin: 0;
+}
+.skip-link {
+  position: absolute; left: -999px; top: 0;
+  background: #1d4ed8; color: #fff; padding: 0.5rem 1rem;
+}
+.skip-link:focus { left: 0; }
+
+header, main, footer { max-width: 56rem; margin: 0 auto; padding: 0 1rem; }
+header {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 0.5rem; padding-block: 1rem; border-bottom: 1px solid #dedbd2;
+}
+.brand { font-weight: 700; color: #1b1f24; text-decoration: none; }
+nav ul { list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0; flex-wrap: wrap; }
+nav a { color: #1d4ed8; text-decoration: none; }
+
+main > section { padding-block: 2rem; border-bottom: 1px solid #eee; }
+.eyebrow { text-transform: uppercase; letter-spacing: 0.08em; color: #e8590c; font-weight: 700; margin: 0; }
+h1 { font-size: 2.25rem; line-height: 1.2; margin: 0.25rem 0 1rem; }
+
+.button {
+  display: inline-block; background: #1d4ed8; color: #fff;
+  padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none;
+}
+
+article { border: 1px solid #dedbd2; border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1rem; }
+article h3 { margin: 0 0 0.25rem; }
+article p { margin: 0.25rem 0; }
+
+ol { padding-left: 1.2rem; }
+ol h3 { margin-bottom: 0; }
+
+form fieldset { border: 1px solid #dedbd2; border-radius: 8px; max-width: 32rem; }
+label { display: block; margin-top: 0.75rem; font-weight: 600; }
+input, select, textarea { width: 100%; padding: 0.5rem; font: inherit; border: 1px solid #aaa; border-radius: 4px; }
+button[type="submit"] {
+  margin-top: 1rem; padding: 0.6rem 1.4rem; font: inherit;
+  background: #1d4ed8; color: #fff; border: 0; border-radius: 6px; cursor: pointer;
+}
+
+footer { padding-block: 1.5rem; border-top: 1px solid #dedbd2; }
+address { font-style: normal; }

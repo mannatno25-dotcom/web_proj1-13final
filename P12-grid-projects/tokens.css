@@ -1,0 +1,97 @@
+/* ==========================================================================
+   tokens.css  -  Design tokens (single source of truth)
+   Every colour, size, space and shadow used in the portfolio is defined here
+   as a CSS custom property. Components only ever use var(--token).
+   ========================================================================== */
+
+:root {
+  /* ---- Colour: brand ---------------------------------------------------- */
+  --color-primary: #1d4ed8;
+  --color-primary-dark: #1e3a8a;
+  --color-primary-soft: #dbe6ff;
+  --color-accent: #e8590c;
+  --color-accent-soft: #ffe8d9;
+
+  /* ---- Colour: neutrals / surfaces ------------------------------------- */
+  --color-bg: #f8f7f3;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f0eee8;
+  --color-text: #1b1f24;
+  --color-text-muted: #5b6570;
+  --color-border: #dedbd2;
+  --color-on-primary: #ffffff;
+
+  /* ---- Colour: feedback ------------------------------------------------- */
+  --color-success: #2b8a3e;
+  --color-warning: #f08c00;
+  --color-danger: #c92a2a;
+
+  /* ---- Typography: families -------------------------------------------- */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* ---- Typography: fluid type scale (ratio ~1.25) ---------------------- */
+  --step--1: clamp(0.8rem, 0.78rem + 0.10vw, 0.875rem);
+  --step-0:  clamp(1rem, 0.96rem + 0.20vw, 1.125rem);
+  --step-1:  clamp(1.25rem, 1.15rem + 0.50vw, 1.5rem);
+  --step-2:  clamp(1.563rem, 1.35rem + 1.00vw, 1.953rem);
+  --step-3:  clamp(1.953rem, 1.55rem + 2.00vw, 2.441rem);
+  --step-4:  clamp(2.441rem, 1.8rem + 3.20vw, 3.052rem);
+  --step-5:  clamp(3.052rem, 2.0rem + 5.00vw, 3.815rem);
+
+  /* ---- Typography: weights, line-heights, tracking --------------------- */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+  --leading-tight: 1.2;
+  --leading-normal: 1.6;
+  --leading-loose: 1.8;
+  --tracking-tight: -0.02em;
+  --tracking-wide: 0.08em;
+
+  /* ---- Spacing scale (4px base) ---------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* ---- Shape, depth, layout -------------------------------------------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.08);
+  --shadow-md: 0 4px 12px rgb(0 0 0 / 0.10);
+  --shadow-lg: 0 12px 32px rgb(0 0 0 / 0.16);
+  --container: 72rem;
+  --nav-height: 4rem;
+
+  /* ---- Layers ----------------------------------------------------------- */
+  --z-base: 1;
+  --z-overlay: 10;
+  --z-nav: 100;
+}
+
+/* Dark theme: only the colour tokens change; components need no edits. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #6b95ff;
+    --color-primary-dark: #9db8ff;
+    --color-primary-soft: #1d2a4d;
+    --color-accent: #ff8a4c;
+    --color-accent-soft: #3d2415;
+    --color-bg: #12151a;
+    --color-surface: #1b2027;
+    --color-surface-alt: #232a33;
+    --color-text: #eceff3;
+    --color-text-muted: #9aa5b1;
+    --color-border: #2f3742;
+    --color-on-primary: #0b1020;
+  }
+}

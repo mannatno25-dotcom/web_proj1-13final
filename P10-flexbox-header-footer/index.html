@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Header &amp; Footer | Advanced Flexbox</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+
+      <a class="logo" href="#top" aria-label="Mannat Agarwala, home">
+        <span class="logo__mark" aria-hidden="true">MA</span>
+        <span class="logo__text">
+          Mannat Agarwala
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#top" aria-current="page">Home</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-actions">
+        <form class="search" role="search" action="#">
+          <label class="visually-hidden" for="q">Search</label>
+          <input id="q" type="search" placeholder="Search...">
+          <button type="submit">Go</button>
+        </form>
+        <a class="cta" href="#contact">Hire me</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <h1>Advanced Flexbox: header &amp; footer</h1>
+    <p>The page is a flex column with <code>min-height: 100vh</code> and <code>main { flex: 1 }</code>, so the footer sits at the bottom of the window even though this page is short.</p>
+
+    <h2>Where each Flexbox feature is used</h2>
+    <table class="table">
+      <thead><tr><th scope="col">Property</th><th scope="col">Used for</th></tr></thead>
+      <tbody>
+        <tr><td><code>justify-content: space-between</code></td><td>Logo left, nav middle, actions right; copyright left, social right</td></tr>
+        <tr><td><code>align-items: center</code></td><td>Vertically centres logo, links, search and button</td></tr>
+        <tr><td><code>flex: 1</code> on the nav</td><td>Nav absorbs spare space and centres its links</td></tr>
+        <tr><td><code>flex-wrap</code> + <code>flex-basis: 100%</code></td><td>Nav drops to a second row on small screens</td></tr>
+        <tr><td><code>order</code></td><td>Mobile: actions move up beside the logo, nav goes below, no HTML change</td></tr>
+        <tr><td><code>gap</code></td><td>All spacing between flex items (no margins needed)</td></tr>
+        <tr><td><code>margin-top: auto</code> / <code>flex: 1</code> on <code>main</code></td><td>Sticky footer</td></tr>
+        <tr><td><code>flex: 2 1 18rem</code> vs <code>flex: 1 1 9rem</code></td><td>Footer brand column is twice as wide as link columns</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <div class="footer-brand">
+          <p class="footer-brand__name">Mannat Agarwala</p>
+          <p>Front-end developer building accessible, responsive websites.</p>
+        </div>
+
+        <nav class="footer-col" aria-labelledby="f-explore">
+          <h2 id="f-explore">Explore</h2>
+          <ul>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#blog">Blog</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-labelledby="f-resources">
+          <h2 id="f-resources">Resources</h2>
+          <ul>
+            <li><a href="#">Resume (PDF)</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Case studies</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-labelledby="f-contact">
+          <h2 id="f-contact">Contact</h2>
+          <ul>
+            <li><a href="mailto:mannatno25@gmail.com">mannatno25@gmail.com</a></li>
+            <li>Bengaluru, India</li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 Mannat Agarwala. All rights reserved.</p>
+        <ul class="social">
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">X</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

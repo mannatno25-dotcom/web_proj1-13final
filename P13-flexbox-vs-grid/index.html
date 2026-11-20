@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox vs Grid | Choosing the Right Layout Tool</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hidden checkbox drives the "show layout labels" toggle via :has() -->
+  <input type="checkbox" id="labels" class="visually-hidden" checked>
+
+  <!-- PAGE SHELL = GRID (two dimensions: rows AND columns) -->
+  <div class="shell" data-layout="grid">
+
+    <!-- HEADER = FLEX (a single row of items) -->
+    <header class="shell__header" data-layout="flex">
+      <a class="brand" href="#top">Mannat Agarwala</a>
+      <nav aria-label="Primary">
+        <ul class="topnav" data-layout="flex">
+          <li><a href="#top" aria-current="page">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#guide">Guide</a></li>
+        </ul>
+      </nav>
+      <label class="toggle" for="labels">
+        <span class="toggle__box" aria-hidden="true"></span>
+        Show layout labels
+      </label>
+    </header>
+
+    <!-- SIDEBAR = FLEX column (one axis, vertical) -->
+    <aside class="shell__sidebar" aria-label="On this page">
+      <h2 class="eyebrow">On this page</h2>
+      <ul class="sidenav" data-layout="flex">
+        <li><a href="#hero">Intro</a></li>
+        <li><a href="#stats">Stats</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#guide">Decision guide</a></li>
+      </ul>
+      <h2 class="eyebrow">Skills</h2>
+      <ul class="chips" data-layout="flex">
+        <li>HTML</li><li>CSS</li><li>Grid</li><li>Flexbox</li><li>Git</li><li>A11y</li>
+      </ul>
+    </aside>
+
+    <main id="top" class="shell__main" data-layout="flex">
+
+      <!-- Hero = FLEX (text block + button group side by side) -->
+      <section id="hero" class="hero" data-layout="flex">
+        <div class="hero__text">
+          <h1>Flexbox <em>and</em> Grid, together</h1>
+          <p>This page uses both on purpose. Turn labels on or off (top right) to see which system lays out each part.</p>
+        </div>
+        <div class="btn-group" data-layout="flex">
+          <a class="btn" href="#projects">Projects</a>
+          <a class="btn btn--ghost" href="#guide">Guide</a>
+        </div>
+      </section>
+
+      <!-- Stats = GRID (equal columns that must align in 2D) -->
+      <section id="stats" aria-label="Quick stats" class="stats" data-layout="grid">
+        <div class="stat"><span class="stat__n">13</span><span class="stat__l">Practicals</span></div>
+        <div class="stat"><span class="stat__n">4</span><span class="stat__l">Git tags &amp; branches</span></div>
+        <div class="stat"><span class="stat__n">3</span><span class="stat__l">Layout systems</span></div>
+        <div class="stat"><span class="stat__n">0</span><span class="stat__l">Frameworks</span></div>
+      </section>
+
+      <!-- Gallery = GRID; each card's inside = FLEX column -->
+      <section id="projects" aria-labelledby="proj-h">
+        <h2 id="proj-h">Projects</h2>
+        <div class="gallery" data-layout="grid">
+
+          <article class="card" data-layout="flex">
+            <div class="card__media" style="--hue:222"></div>
+            <h3>Weather Dashboard</h3>
+            <p>Five-day forecast with unit toggle.</p>
+            <div class="card__foot" data-layout="flex">
+              <ul class="chips chips--sm" data-layout="flex"><li>JS</li><li>CSS</li></ul>
+              <a class="btn btn--sm" href="#projects">View</a>
+            </div>
+          </article>
+
+          <article class="card" data-layout="flex">
+            <div class="card__media" style="--hue:20"></div>
+            <h3>Recipe Finder</h3>
+            <p>Search recipes by ingredient, filter by diet, and save favourites.</p>
+            <div class="card__foot" data-layout="flex">
+              <ul class="chips chips--sm" data-layout="flex"><li>Grid</li></ul>
+              <a class="btn btn--sm" href="#projects">View</a>
+            </div>
+          </article>
+
+          <article class="card" data-layout="flex">
+            <div class="card__media" style="--hue:160"></div>
+            <h3>Study Planner</h3>
+            <p>Weekly tasks, stored locally.</p>
+            <div class="card__foot" data-layout="flex">
+              <ul class="chips chips--sm" data-layout="flex"><li>Flexbox</li><li>JS</li></ul>
+              <a class="btn btn--sm" href="#projects">View</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Decision guide = a GRID of two columns -->
+      <section id="guide" aria-labelledby="guide-h">
+        <h2 id="guide-h">Which one should I use?</h2>
+        <div class="guide" data-layout="grid">
+          <div class="guide__col guide__col--flex">
+            <h3>Flexbox: one dimension</h3>
+            <ul>
+              <li>Content decides the size (nav links, buttons, tags)</li>
+              <li>Items sit in a single row <em>or</em> column</li>
+              <li>You need to align or distribute along one axis</li>
+              <li>Components: toolbars, card footers, form rows</li>
+            </ul>
+          </div>
+          <div class="guide__col guide__col--grid">
+            <h3>Grid: two dimensions</h3>
+            <ul>
+              <li>Layout decides the size (page shell, galleries)</li>
+              <li>Rows <em>and</em> columns must line up together</li>
+              <li>You want to place items by area or line</li>
+              <li>Page-level structure, dashboards, magazines</li>
+            </ul>
+          </div>
+        </div>
+        <p class="rule"><strong>Rule of thumb:</strong> Grid for the <em>outside</em> (page and sections), Flexbox for the <em>inside</em> (components). They nest happily.</p>
+      </section>
+
+    </main>
+
+    <!-- FOOTER = FLEX -->
+    <footer class="shell__footer" data-layout="flex">
+      <p>&copy; 2026 Mannat Agarwala</p>
+      <p><a href="mailto:mannatno25@gmail.com">mannatno25@gmail.com</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>

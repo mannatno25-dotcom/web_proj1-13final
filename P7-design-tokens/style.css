@@ -1,0 +1,52 @@
+/* Page-specific styles for the style-guide page. Only tokens are used. */
+.page-head {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  padding-block: var(--space-7);
+  margin-bottom: var(--space-7);
+}
+.page-head h6 { color: var(--color-on-primary); opacity: 0.8; margin-bottom: var(--space-2); }
+.page-head h1 { margin-bottom: var(--space-3); }
+.page-head code { background: rgb(255 255 255 / 0.18); color: inherit; }
+
+main section { margin-bottom: var(--space-8); }
+
+/* Colour swatches */
+.swatches {
+  list-style: none; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: var(--space-4);
+}
+.swatches li { display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--step--1); }
+.swatch {
+  height: 4.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+/* Type table */
+.type-table { width: 100%; border-collapse: collapse; }
+.type-table th, .type-table td {
+  text-align: left; padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+.type-table th { font-size: var(--step--1); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--color-text-muted); }
+.type-table td:first-child { white-space: nowrap; width: 1%; }
+
+/* Spacing bars */
+.spacing { list-style: none; padding: 0; }
+.spacing li { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-2); }
+.spacing code { min-width: 7rem; }
+.bar { display: inline-block; height: 1rem; background: var(--color-accent); border-radius: var(--radius-sm); }
+
+/* Shapes */
+.shapes { display: flex; gap: var(--space-5); flex-wrap: wrap; }
+.shape {
+  flex: 1 1 10rem;
+  padding: var(--space-6) var(--space-4);
+  background: var(--color-surface);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+}

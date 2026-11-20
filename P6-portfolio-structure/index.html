@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Mannat Agarwala, front-end developer: about, skills, projects, experience and contact.">
+  <title>Mannat Agarwala | Front-end Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header id="top">
+    <a class="brand" href="#top">Mannat Agarwala</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- 1. Hero / introduction -->
+    <section id="hero" aria-labelledby="hero-heading">
+      <p class="eyebrow">Front-end developer</p>
+      <h1 id="hero-heading">I build clear, accessible web experiences.</h1>
+      <p>Final-year student focused on semantic HTML, modern CSS and clean JavaScript.</p>
+      <p><a class="button" href="#projects">See my work</a></p>
+    </section>
+
+    <!-- 2. About -->
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
+      <p>
+        I'm a computer-science student who likes solving layout puzzles and
+        making interfaces that work for everyone. I learn best by building
+        small projects and keeping them under version control.
+      </p>
+    </section>
+
+    <!-- 3. Skills -->
+    <section id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <ul>
+        <li>HTML5 &amp; accessibility</li>
+        <li>CSS: Flexbox, Grid, custom properties</li>
+        <li>JavaScript (ES6+)</li>
+        <li>Git &amp; GitHub</li>
+        <li>Responsive design</li>
+      </ul>
+    </section>
+
+    <!-- 4. Projects: each project is an independent <article> -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+
+      <article>
+        <h3>Weather Dashboard</h3>
+        <p>A responsive dashboard that shows a five-day forecast.</p>
+        <p><small>Tech: HTML, CSS, JavaScript</small></p>
+        <p><a href="https://github.com/your-username/weather-dashboard">View source</a></p>
+      </article>
+
+      <article>
+        <h3>Recipe Finder</h3>
+        <p>Search and filter recipes by ingredient, with keyboard-friendly controls.</p>
+        <p><small>Tech: HTML, CSS Grid, JavaScript</small></p>
+        <p><a href="https://github.com/your-username/recipe-finder">View source</a></p>
+      </article>
+
+      <article>
+        <h3>Study Planner</h3>
+        <p>A weekly planner that stores tasks in the browser.</p>
+        <p><small>Tech: HTML, Flexbox, localStorage</small></p>
+        <p><a href="https://github.com/your-username/study-planner">View source</a></p>
+      </article>
+    </section>
+
+    <!-- 5. Experience / education as an ordered, dated list -->
+    <section id="experience" aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Experience &amp; education</h2>
+      <ol>
+        <li>
+          <h3>B.Tech, Computer Science</h3>
+          <p><time datetime="2024-08">Aug 2024</time> - <time datetime="2028-05">May 2028</time></p>
+        </li>
+        <li>
+          <h3>Web Development Intern</h3>
+          <p><time datetime="2026-05">May 2026</time> - <time datetime="2026-07">Jul 2026</time></p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 6. Contact form -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Send me a message</legend>
+
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+
+          <label for="topic">Topic</label>
+          <select id="topic" name="topic">
+            <option>Project enquiry</option>
+            <option>Internship</option>
+            <option>Just saying hi</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit">Send</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mannat Agarwala.</p>
+    <address>
+      <a href="mailto:mannatno25@gmail.com">mannatno25@gmail.com</a> &middot;
+      <a href="https://github.com/mannantagarwala">GitHub</a>
+    </address>
+    <p><a href="#top">Back to top</a></p>
+  </footer>
+</body>
+</html>

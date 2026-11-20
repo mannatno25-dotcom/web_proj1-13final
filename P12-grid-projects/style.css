@@ -1,0 +1,88 @@
+/* ==========================================================================
+   P12 - Portfolio projects grid with advanced CSS Grid
+   ========================================================================== */
+
+.page-head {
+  background: var(--color-surface-alt);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: var(--space-7);
+  margin-bottom: var(--space-6);
+}
+.page-head h1 { font-size: var(--step-4); }
+
+/* ---- The grid ----------------------------------------------------------- */
+.grid {
+  list-style: none;
+  margin: 0 0 var(--space-8);
+  padding: 0;
+
+  display: grid;
+  /* As many columns of at least 16rem as fit; min(100%, 16rem) stops overflow on tiny screens */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  grid-auto-rows: 11rem;                 /* every implicit row is 11rem tall */
+  grid-auto-flow: row dense;             /* back-fill holes with later, smaller tiles */
+  gap: var(--space-4);
+}
+
+/* ---- Tile --------------------------------------------------------------- */
+.tile {
+  position: relative;
+  display: grid;                         /* a tile is itself a tiny grid: label on top, text at bottom */
+  grid-template-rows: auto 1fr;
+  align-content: stretch;
+  padding: var(--space-5);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(145deg, hsl(var(--hue) 65% 40%), hsl(calc(var(--hue) + 35) 70% 55%));
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.tile:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.tile::after {                           /* soft shade so white text always has contrast */
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgb(0 0 0 / 0.38), transparent 65%);
+  pointer-events: none;
+}
+.tile > * { position: relative; z-index: 1; }   /* keep text above the shade */
+
+.tile__cat {
+  justify-self: start;
+  padding: 0 var(--space-3);
+  background: rgb(255 255 255 / 0.2);
+  border-radius: var(--radius-pill);
+  font-size: var(--step--1);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.02em;
+}
+.tile > div { align-self: end; }         /* pin heading + text to the bottom of the tile */
+.tile h2, .tile h3 { color: #fff; margin: 0 0 var(--space-1); letter-spacing: 0; }
+.tile h3 { font-size: var(--step-1); }
+.tile h2 { font-size: var(--step-3); }
+.tile p { margin: 0; font-size: var(--step--1); opacity: 0.92; }
+.tile__tags { margin-top: var(--space-3) !important; font-family: var(--font-mono); }
+
+/* ---- Spans: only when there are at least 2 columns --------------------- */
+@media (min-width: 40em) {
+  .tile--wide     { grid-column: span 2; }
+  .tile--tall     { grid-row: span 2; }
+  .tile--featured { grid-column: span 2; grid-row: span 2; }
+  .tile--featured p { font-size: var(--step-0); max-width: 34ch; }
+}
+
+/* ---- Legend & explanation ---------------------------------------------- */
+.legend {
+  display: flex; flex-wrap: wrap; gap: var(--space-5);
+  list-style: none; padding: 0; margin: 0 0 var(--space-5);
+  font-size: var(--step--1); color: var(--color-text-muted);
+}
+.legend li { display: flex; align-items: center; gap: var(--space-2); }
+.legend__box { display: inline-block; background: var(--color-primary); border-radius: 3px; }
+.legend__box--1    { width: 0.8rem; height: 0.8rem; }
+.legend__box--wide { width: 1.6rem; height: 0.8rem; }
+.legend__box--tall { width: 0.8rem; height: 1.6rem; }
+.legend__box--feat { width: 1.6rem; height: 1.6rem; }
+
+.explain { max-width: 52rem; margin-bottom: var(--space-8); }
+.explain li { margin-bottom: var(--space-3); }

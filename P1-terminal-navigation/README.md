@@ -1,0 +1,89 @@
+# P1 - Project folder and terminal navigation
+
+**Aim:** create a project folder and move around the file system using only the terminal.
+
+**Commands practised:** `pwd`, `ls -la`, `mkdir`, `cd` (`..`, `~`), `touch`, `echo >`, `cat`, `cp`, `mv`, `rm`, `rmdir`, `find`, `ls -R`.
+
+**How to repeat:** open a terminal (Git Bash on Windows) and type each line that starts with `$`. Output is shown beneath it. `~` is your home folder.
+
+## Terminal output
+
+```text
+
+# Where am I? What is here?
+$ pwd
+~
+$ ls -la
+total 8
+drwx------  2 root root 4096 Nov 18 04:31 .
+drwxrwxrwt 11 root root 4096 Nov 18 04:31 ..
+
+# Create the project folder and move into it
+$ mkdir webdev-portfolio
+$ cd webdev-portfolio
+$ pwd
+~/webdev-portfolio
+
+# Create a sub-folder structure in one command
+$ mkdir css js images docs
+$ ls
+css
+docs
+images
+js
+
+# Create empty files and write content into one
+$ touch index.html css/style.css js/main.js
+$ echo "<h1>Hello, terminal!</h1>" > index.html
+$ cat index.html
+<h1>Hello, terminal!</h1>
+
+# Copy, rename (move) and delete
+$ cp index.html docs/index-copy.html
+$ mv docs/index-copy.html docs/backup.html
+$ ls docs
+backup.html
+$ rm docs/backup.html
+$ rmdir docs
+$ ls
+css
+images
+index.html
+js
+
+# Navigate down, up, and home
+$ cd css
+$ pwd
+~/webdev-portfolio/css
+$ cd ..
+$ pwd
+~/webdev-portfolio
+$ cd ~
+$ pwd
+~
+
+# Inspect the whole project tree
+$ cd webdev-portfolio
+$ find . -type f -o -type d
+.
+./images
+./index.html
+./css
+./css/style.css
+./js
+./js/main.js
+$ ls -R
+.:
+css
+images
+index.html
+js
+
+./css:
+style.css
+
+./images:
+
+./js:
+main.js
+```

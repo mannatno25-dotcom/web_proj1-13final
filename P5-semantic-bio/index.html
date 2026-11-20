@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Short biography page written with semantic HTML5 elements.">
+  <title>Mannat Agarwala | Bio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Page banner: site name + primary navigation -->
+  <header>
+    <p class="site-name">Mannat Agarwala</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Hi, I'm Mannat Agarwala</h1>
+    <p class="lead">Computer-science student and aspiring front-end developer.</p>
+
+    <!-- Self-contained content with a caption -->
+    <figure>
+      <svg viewBox="0 0 120 120" role="img" aria-labelledby="avatar-title">
+        <title id="avatar-title">Illustrated avatar of the author</title>
+        <circle cx="60" cy="60" r="60" fill="#1d4ed8"/>
+        <circle cx="60" cy="46" r="20" fill="#fff"/>
+        <path d="M20 108c6-24 24-34 40-34s34 10 40 34a60 60 0 0 1-80 0z" fill="#fff"/>
+      </svg>
+      <figcaption>Figure 1: My avatar (an inline SVG, so no image file is needed).</figcaption>
+    </figure>
+
+    <section id="about">
+      <h2>About me</h2>
+      <p>
+        I am studying <abbr title="Bachelor of Technology">B.Tech</abbr> in Computer
+        Science. I enjoy turning ideas into small, useful web pages and learning how
+        the web works under the hood.
+      </p>
+      <blockquote>
+        <p>Make it work, make it right, make it fast.</p>
+        <footer>- <cite>Kent Beck</cite></footer>
+      </blockquote>
+    </section>
+
+    <section id="interests">
+      <h2>Interests</h2>
+      <h3>Technology</h3>
+      <ul>
+        <li>Front-end development</li>
+        <li>Open-source software</li>
+        <li>Version control with Git</li>
+      </ul>
+      <h3>Outside of code</h3>
+      <ol>
+        <li>Cricket</li>
+        <li>Photography</li>
+        <li>Reading</li>
+      </ol>
+    </section>
+
+    <section id="timeline">
+      <h2>Timeline</h2>
+      <dl>
+        <dt><time datetime="2024-08">August 2024</time></dt>
+        <dd>Started B.Tech in Computer Science.</dd>
+        <dt><time datetime="2025-11">November 2025</time></dt>
+        <dd>Began the Programming for Web Development laboratory.</dd>
+        <dt><time datetime="2026-03">March 2026</time></dt>
+        <dd>Published my first portfolio on GitHub.</dd>
+      </dl>
+    </section>
+
+    <!-- A sidebar-style note related to, but separate from, the main flow -->
+    <aside aria-label="Fun fact">
+      <h2>Fun fact</h2>
+      <p>My first web page was written in Notepad, and it had a blinking title.</p>
+    </aside>
+  </main>
+
+  <footer id="contact">
+    <h2>Contact</h2>
+    <address>
+      <a href="mailto:mannatno25@gmail.com">mannatno25@gmail.com</a><br>
+      Bengaluru, Karnataka, India
+    </address>
+    <p><small>&copy; 2026 Mannat Agarwala. Built with semantic HTML.</small></p>
+  </footer>
+
+</body>
+</html>

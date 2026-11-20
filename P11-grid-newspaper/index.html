@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Daily Portfolio | Newspaper Layout with CSS Grid</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="paper">
+
+    <header class="masthead">
+      <div class="masthead__strip">
+        <span>Wednesday, 18 November 2026</span>
+        <span>Vol. 1 &middot; No. 13</span>
+        <span>Price: free</span>
+      </div>
+      <h1 class="masthead__title">The Daily Portfolio</h1>
+      <p class="masthead__tagline">All the news that's fit to commit</p>
+    </header>
+
+    <nav class="sections" aria-label="Sections">
+      <ul>
+        <li><a href="#">Front page</a></li>
+        <li><a href="#">Layout</a></li>
+        <li><a href="#">Typography</a></li>
+        <li><a href="#">Accessibility</a></li>
+        <li><a href="#">Opinion</a></li>
+      </ul>
+    </nav>
+
+    <main class="grid">
+
+      <!-- LEFT COLUMN -->
+      <aside class="briefs" aria-labelledby="briefs-h">
+        <h2 id="briefs-h" class="kicker">In brief</h2>
+        <article>
+          <h3>Flexbox keeps its crown for one-dimensional rows</h3>
+          <p>Developers agree that navbars and button groups remain Flexbox territory.</p>
+        </article>
+        <article>
+          <h3>Grid areas make layouts readable</h3>
+          <p>Naming regions in <code>grid-template-areas</code> turns CSS into a floor plan.</p>
+        </article>
+        <article>
+          <h3>Fluid type scale adopted</h3>
+          <p>A single <code>clamp()</code> per step replaces a pile of media queries.</p>
+        </article>
+        <article>
+          <h3>Dark mode now a token swap</h3>
+          <p>Only colour variables change; components are untouched.</p>
+        </article>
+      </aside>
+
+      <!-- CENTRE COLUMN: lead story -->
+      <article class="lead">
+        <p class="kicker">Front page</p>
+        <h2 class="lead__headline">Student Ships Portfolio, Layout Praised As "Surprisingly Tidy"</h2>
+        <p class="byline">By <strong>Your Name</strong> &middot; Staff Reporter</p>
+
+        <figure class="lead__figure">
+          <svg viewBox="0 0 600 220" role="img" aria-label="Illustration of a three-column page layout">
+            <rect width="600" height="220" fill="#e9e5da"/>
+            <rect x="20" y="20" width="560" height="26" fill="#1b1f24"/>
+            <rect x="20" y="62" width="140" height="138" fill="#c9c2af"/>
+            <rect x="176" y="62" width="248" height="138" fill="#1d4ed8"/>
+            <rect x="440" y="62" width="140" height="138" fill="#c9c2af"/>
+          </svg>
+          <figcaption>The three-column grid behind this very page: 1fr, 2fr, 1fr.</figcaption>
+        </figure>
+
+        <div class="lead__text">
+          <p>A student has launched a personal portfolio built entirely on CSS Grid, and observers say the result is both orderly and quick to load. The site uses named template areas, so each region of the page has a clear name and a clear home.</p>
+          <p>"Once I could say <em>this goes here</em> in plain words, the layout almost wrote itself," the author said. The page rearranges itself from three columns to two, then to one, depending on the width of the reader's screen.</p>
+          <p>Critics noted that the body copy flows in two newspaper-style columns using the CSS multi-column module, a feature that pairs naturally with Grid: Grid arranges the page, while multi-column flows the text.</p>
+          <p>Accessibility reviewers praised the semantic markup. Headings follow a logical order, landmarks are labelled, and the reading order in the HTML matches the visual order on desktop.</p>
+          <p>The author plans to extend the grid to a projects gallery next, and says the next release will include a few surprises for dense, auto-placed tiles.</p>
+        </div>
+      </article>
+
+      <!-- RIGHT COLUMN -->
+      <aside class="trending" aria-labelledby="trend-h">
+        <h2 id="trend-h" class="kicker">Most read</h2>
+        <ol class="most-read">
+          <li><a href="#">Grid vs Flexbox: a field guide</a></li>
+          <li><a href="#">Ten tokens every design system needs</a></li>
+          <li><a href="#">Why your sticky header covers anchors</a></li>
+          <li><a href="#">Semantic HTML in five minutes</a></li>
+        </ol>
+        <blockquote class="pull-quote">
+          <p>Layout is a conversation between the content and the container.</p>
+          <footer>- Editorial board</footer>
+        </blockquote>
+      </aside>
+
+      <!-- SECONDARY STORIES: nested grid of two -->
+      <section class="secondary" aria-label="More stories">
+        <article>
+          <p class="kicker">Layout</p>
+          <h3>Dense auto-placement fills the gaps</h3>
+          <p>With <code>grid-auto-flow: dense</code>, small tiles move up to fill holes left by large ones. Editors call it "the end of awkward white space".</p>
+        </article>
+        <article>
+          <p class="kicker">Typography</p>
+          <h3>Fluid headlines arrive</h3>
+          <p>Headlines now scale smoothly between phone and desktop sizes, ending abrupt jumps at breakpoints.</p>
+        </article>
+      </section>
+
+      <footer class="paper-footer">
+        <p>&copy; 2026 The Daily Portfolio &middot; Printed on the web &middot; <a href="mailto:you@example.com">you@example.com</a></p>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

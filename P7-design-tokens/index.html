@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Tokens &amp; Typography | Style Guide</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="page-head">
+    <div class="container">
+      <h6>Portfolio design system</h6>
+      <h1>Design tokens &amp; typography</h1>
+      <p>Every value on this page comes from <code>tokens.css</code>. Change a token and the whole page updates.</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section aria-labelledby="color-h">
+      <h2 id="color-h">Colour</h2>
+      <ul class="swatches">
+        <li><span class="swatch" style="background:var(--color-primary)"></span><code>--color-primary</code></li>
+        <li><span class="swatch" style="background:var(--color-primary-dark)"></span><code>--color-primary-dark</code></li>
+        <li><span class="swatch" style="background:var(--color-primary-soft)"></span><code>--color-primary-soft</code></li>
+        <li><span class="swatch" style="background:var(--color-accent)"></span><code>--color-accent</code></li>
+        <li><span class="swatch" style="background:var(--color-accent-soft)"></span><code>--color-accent-soft</code></li>
+        <li><span class="swatch" style="background:var(--color-surface)"></span><code>--color-surface</code></li>
+        <li><span class="swatch" style="background:var(--color-surface-alt)"></span><code>--color-surface-alt</code></li>
+        <li><span class="swatch" style="background:var(--color-text)"></span><code>--color-text</code></li>
+        <li><span class="swatch" style="background:var(--color-text-muted)"></span><code>--color-text-muted</code></li>
+        <li><span class="swatch" style="background:var(--color-success)"></span><code>--color-success</code></li>
+        <li><span class="swatch" style="background:var(--color-warning)"></span><code>--color-warning</code></li>
+        <li><span class="swatch" style="background:var(--color-danger)"></span><code>--color-danger</code></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="type-h">
+      <h2 id="type-h">Type scale</h2>
+      <table class="type-table">
+        <thead><tr><th scope="col">Token</th><th scope="col">Sample</th></tr></thead>
+        <tbody>
+          <tr><td><code>--step-5</code> / h1</td><td><span style="font-size:var(--step-5);font-weight:700;line-height:1.1">Aa Heading</span></td></tr>
+          <tr><td><code>--step-4</code> / h2</td><td><span style="font-size:var(--step-4);font-weight:700;line-height:1.1">Aa Heading</span></td></tr>
+          <tr><td><code>--step-3</code> / h3</td><td><span style="font-size:var(--step-3);font-weight:700;line-height:1.1">Aa Heading</span></td></tr>
+          <tr><td><code>--step-2</code> / h4</td><td><span style="font-size:var(--step-2);font-weight:700">Aa Heading</span></td></tr>
+          <tr><td><code>--step-1</code> / h5</td><td><span style="font-size:var(--step-1);font-weight:700">Aa Heading</span></td></tr>
+          <tr><td><code>--step-0</code> / body</td><td><span style="font-size:var(--step-0)">The quick brown fox jumps over the lazy dog.</span></td></tr>
+          <tr><td><code>--step--1</code> / small</td><td><span style="font-size:var(--step--1)">The quick brown fox jumps over the lazy dog.</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="font-h">
+      <h2 id="font-h">Font families</h2>
+      <p style="font-family:var(--font-sans)"><strong>Sans</strong> - used for UI and body text.</p>
+      <p style="font-family:var(--font-serif)"><strong>Serif</strong> - used for quotations and editorial accents.</p>
+      <p style="font-family:var(--font-mono)"><strong>Mono</strong> - used for code and token names.</p>
+      <blockquote>Good typography is invisible; bad typography is everywhere.</blockquote>
+    </section>
+
+    <section aria-labelledby="space-h">
+      <h2 id="space-h">Spacing scale</h2>
+      <ul class="spacing">
+        <li><code>--space-1</code><span class="bar" style="width:var(--space-1)"></span>4px</li>
+        <li><code>--space-2</code><span class="bar" style="width:var(--space-2)"></span>8px</li>
+        <li><code>--space-3</code><span class="bar" style="width:var(--space-3)"></span>12px</li>
+        <li><code>--space-4</code><span class="bar" style="width:var(--space-4)"></span>16px</li>
+        <li><code>--space-5</code><span class="bar" style="width:var(--space-5)"></span>24px</li>
+        <li><code>--space-6</code><span class="bar" style="width:var(--space-6)"></span>32px</li>
+        <li><code>--space-7</code><span class="bar" style="width:var(--space-7)"></span>48px</li>
+        <li><code>--space-8</code><span class="bar" style="width:var(--space-8)"></span>64px</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="shape-h">
+      <h2 id="shape-h">Radius &amp; shadow</h2>
+      <div class="shapes">
+        <div class="shape" style="border-radius:var(--radius-sm);box-shadow:var(--shadow-sm)">radius-sm<br>shadow-sm</div>
+        <div class="shape" style="border-radius:var(--radius-md);box-shadow:var(--shadow-md)">radius-md<br>shadow-md</div>
+        <div class="shape" style="border-radius:var(--radius-lg);box-shadow:var(--shadow-lg)">radius-lg<br>shadow-lg</div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

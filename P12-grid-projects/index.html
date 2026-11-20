@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects Grid | Advanced CSS Grid</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="page-head">
+    <div class="container">
+      <h6>Advanced CSS Grid</h6>
+      <h1>Projects</h1>
+      <p>One grid, many tile sizes. <code>auto-fit</code> + <code>minmax()</code> chooses the column count, <code>span</code> makes some tiles bigger, and <code>grid-auto-flow: dense</code> back-fills the gaps.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <ul class="legend" aria-label="Tile sizes">
+      <li><span class="legend__box legend__box--1"></span>1 &times; 1</li>
+      <li><span class="legend__box legend__box--wide"></span>Wide (span 2 cols)</li>
+      <li><span class="legend__box legend__box--tall"></span>Tall (span 2 rows)</li>
+      <li><span class="legend__box legend__box--feat"></span>Featured (2 &times; 2)</li>
+    </ul>
+
+    <ul class="grid" role="list">
+
+      <li class="tile tile--featured" style="--hue:222">
+        <span class="tile__cat">Featured &middot; Web app</span>
+        <div>
+          <h2>Weather Dashboard</h2>
+          <p>Five-day forecast, hourly chart and a unit toggle, all in a layout that adapts from phone to desktop.</p>
+          <p class="tile__tags">HTML &middot; CSS &middot; JavaScript</p>
+        </div>
+      </li>
+
+      <li class="tile" style="--hue:20">
+        <span class="tile__cat">Web app</span>
+        <div><h3>Recipe Finder</h3><p>Search by ingredient.</p></div>
+      </li>
+
+      <li class="tile" style="--hue:160">
+        <span class="tile__cat">Tool</span>
+        <div><h3>Study Planner</h3><p>Weekly tasks, saved locally.</p></div>
+      </li>
+
+      <li class="tile tile--tall" style="--hue:285">
+        <span class="tile__cat">Design</span>
+        <div>
+          <h3>Design System</h3>
+          <p>Tokens, type scale and components used across this portfolio.</p>
+        </div>
+      </li>
+
+      <li class="tile" style="--hue:340">
+        <span class="tile__cat">Web app</span>
+        <div><h3>Budget Tracker</h3><p>Spending by category.</p></div>
+      </li>
+
+      <li class="tile tile--wide" style="--hue:190">
+        <span class="tile__cat">Layout</span>
+        <div><h3>Newspaper Front Page</h3><p>Three-column CSS Grid layout with named template areas.</p></div>
+      </li>
+
+      <li class="tile" style="--hue:45">
+        <span class="tile__cat">Web app</span>
+        <div><h3>Quiz App</h3><p>Instant feedback.</p></div>
+      </li>
+
+      <li class="tile" style="--hue:100">
+        <span class="tile__cat">Tool</span>
+        <div><h3>Colour Picker</h3><p>Contrast checker.</p></div>
+      </li>
+
+      <li class="tile" style="--hue:250">
+        <span class="tile__cat">Layout</span>
+        <div><h3>Sticky Navbar</h3><p>Positioning study.</p></div>
+      </li>
+
+      <li class="tile" style="--hue:0">
+        <span class="tile__cat">Game</span>
+        <div><h3>Memory Match</h3><p>Flip and match.</p></div>
+      </li>
+
+      <li class="tile" style="--hue:205">
+        <span class="tile__cat">Docs</span>
+        <div><h3>Git Cheat-sheet</h3><p>Branches and tags.</p></div>
+      </li>
+
+    </ul>
+
+    <section class="explain">
+      <h2>What makes this grid "advanced"</h2>
+      <ul>
+        <li><code>repeat(auto-fit, minmax(min(100%, 16rem), 1fr))</code> - columns appear and disappear as space allows; no breakpoints for the column count.</li>
+        <li><code>grid-auto-rows</code> - every implicit row is the same height, so spans line up perfectly.</li>
+        <li><code>grid-column: span 2</code> / <code>grid-row: span 2</code> - tiles of different sizes.</li>
+        <li><code>grid-auto-flow: dense</code> - small tiles jump back to fill holes left behind.</li>
+        <li>Spans are only applied from 40em up, because a two-column span in a one-column grid would create an extra, unwanted column.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
